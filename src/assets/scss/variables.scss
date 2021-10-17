@@ -1,0 +1,36 @@
+@import "./fonts.scss";
+
+// Colors
+$background-color: #ffffff;
+$dim-color: rgba(0, 0, 0, 0.3);
+
+$primary-lighter-color: #7d7265;
+$primary-color: #786c5e;
+$primary-darker-color: #6e6556;
+
+$default-text-color: #0d1b1e;
+$primary-text-color: $primary-color; // #9e6e69;
+$secondary-text-color: $primary-lighter-color; // #8a8b83;
+
+$footer-color: rgba($primary-lighter-color, 0.1);
+
+// Font
+$primary-font-family: "LM Roman Caps 10", Times, "Times New Roman", serif;
+$secondary-font-family: Lato, Helvetica, sans-serif;
+
+$label-font-size: 0.75rem; // 14px
+$default-font-size: 1rem; // 16px
+
+$title-font-size: 1.875rem; // 30px
+$title-md-font-size: 3rem; // 54px
+$title-lg-font-size: 3.5rem; // 64px
+
+$subtitle-font-size: 1rem; // 16px
+$subtitle-md-font-size: 1.5rem; // 24px
+
+$show-more-link-font-size: 1rem; // 16px
+$show-more-link-md-font-size: 0.75rem; // 14px
+
+$header-max-width: 1200px;
+$header-height: 120px;
+$logo-size: 80px;

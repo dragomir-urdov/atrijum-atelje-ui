@@ -1,0 +1,257 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "./variables.scss";
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $background-color;
+
+  font-family: $primary-font-family;
+  font-size: $default-font-size;
+  color: $default-text-color;
+}
+
+a {
+  color: $primary-text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $default-text-color;
+  }
+}
+
+// Fonts ------------------------------------------------------
+
+.font-primary {
+  font-family: $primary-font-family;
+}
+
+.font-secondary {
+  font-family: $secondary-font-family;
+}
+
+.fs-label {
+  font-size: $label-font-size;
+}
+
+.fs-default {
+  font-size: $default-font-size;
+}
+
+.fs-title {
+  font-size: $title-font-size;
+  @include media-breakpoint-up(md) {
+    font-size: $title-md-font-size;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: $title-lg-font-size;
+  }
+}
+
+.fs-subtitle {
+  font-size: $subtitle-font-size;
+  @include media-breakpoint-up(md) {
+    font-size: $subtitle-md-font-size;
+  }
+}
+
+.primary-text-color {
+  color: $primary-text-color;
+}
+
+.secondary-text-color {
+  color: $secondary-text-color;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.no-select {
+  user-select: none;
+}
+
+// Utils ------------------------------------------------------
+
+.prevent-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+}
+
+.w-33 {
+  width: 33%;
+}
+.w-md-33 {
+  @include media-breakpoint-up(md) {
+    width: 33%;
+  }
+}
+
+.w-md-25 {
+  @include media-breakpoint-up(md) {
+    width: 25% !important;
+  }
+}
+
+.mw-lg {
+  max-width: $header-max-width !important;
+}
+
+.bi {
+  &.sm {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  &.md {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  &.lg {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+// Common -----------------------------------------------------
+
+.product--item {
+  .product--item__image {
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+// Components -------------------------------------------------
+
+.header--wrapper {
+  max-width: $header-max-width;
+
+  .logo {
+    width: auto;
+    max-height: $logo-size;
+    height: $logo-size;
+  }
+
+  .accordion {
+    .accordion-button {
+      &:focus,
+      &:not(.collapsed) {
+        &::after {
+          background-image: url("/icons/chevron-down.svg");
+        }
+        background-color: $background-color;
+        color: $default-text-color;
+      }
+    }
+
+    .accordion-button {
+      &.empty::after {
+        content: none;
+      }
+    }
+  }
+
+  .header-popup--wrapper {
+    display: flex;
+    background-color: $background-color;
+    z-index: $zindex-dropdown;
+
+    .header-popup--wrapper__item {
+      img {
+        border: 1px solid transparent;
+      }
+      &:hover {
+        img {
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.banner--wrapper {
+  background-color: $primary-color;
+  .banner--wrapper__image {
+    min-height: 400px;
+    height: 50vw;
+    max-height: calc(100vh - $header-height);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.highlight-section {
+  .highlight-section--item {
+    max-width: $header-max-width;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .highlight-section--item__image {
+      @include media-breakpoint-down(lg) {
+        max-height: 400px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.instagram--wrapper {
+  .instagram--wrapper__post {
+    cursor: pointer;
+    &:hover::after {
+      content: url("/icons/instagram-white.svg");
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $dim-color;
+    }
+  }
+}
+
+.footer--wrapper {
+  background-color: $footer-color;
+  .footer--wrapper__section {
+    .footer--wrapper__section-title {
+      @include media-breakpoint-up(md) {
+        border-bottom: 1px dashed $default-text-color;
+      }
+    }
+    .footer--wrapper__section-icons {
+      color: $primary-color;
+      .bi:hover {
+        color: $primary-darker-color;
+      }
+    }
+  }
+}
+
+.sub-footer--wrapper {
+  background-color: $footer-color;
+  .sub-footer--wrapper__content {
+    border-top: 1px dashed $default-text-color;
+  }
+  @include media-breakpoint-down(md) {
+    background-color: $default-text-color;
+    *,
+    a {
+      color: white;
+    }
+  }
+}
